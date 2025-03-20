@@ -1,0 +1,16 @@
+version: "3.8"
+
+#Services is nothing but the containers that we want to run
+services:
+  backend:
+    image: 21ucs079/qrcode_devops_practise:backend
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: 21ucs079/qrcode_devops_practise:frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend  # Ensures backend starts before frontend
+    
